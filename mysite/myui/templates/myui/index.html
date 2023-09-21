@@ -13,27 +13,22 @@
   </head>
   <body class="p-4 cursor">
     <h1>the Anti-UX Blog</h1>
-    <p>Adam's Anti-UX Experience</p>
-    <a class="btn btn-danger btn-sm" href="{% url 'page1' %}">Sign Up</a>
-    {% comment %} <div>
-      <label for="disable-cursor">Disable Cursor Animation</label>
-      <input type="checkbox" id="disable-cursor">
-    </div> {% endcomment %}
+    <p>To continue to the anti-UX blog, you must create an account.</p>
+    <a id="signup-button"
+       class="btn btn-danger btn-sm"
+       href="#"
+       onclick="moveButton()">Sign Up</a>
   </body>
-  {% comment %} <script>
-      const disableCursorCheckbox = document.getElementById('disable-cursor');
-      const bodyElement = document.body;
-
-      disableCursorCheckbox.addEventListener('change', () => {
-          if (disableCursorCheckbox.checked) {
-              bodyElement.style.animation = 'none';
-              bodyElement.style.cursor = 'auto';
-          } else {
-              bodyElement.style.animation = 'animate 0.25s infinite';
-              bodyElement.style.cursor = 'url("images/cursor.png")';
+  <script>
+      function moveButton() {
+          var button = document.getElementById('signup-button');
+          button.style.marginLeft = '200px'; // Adjust the value to your desired position
+          button.onclick = function() {
+              button.setAttribute('href', href = "{% url 'page1' %}");
           }
-      });
-  </script> {% endcomment %}
+
+      }
+  </script>
 </html>
-{% comment %} make sursor huge and have styuff flying around {% endcomment %}
+{% comment %} have stuff flying around / popping up {% endcomment %}
 {% comment %} source env/bin/activate {% endcomment %}
