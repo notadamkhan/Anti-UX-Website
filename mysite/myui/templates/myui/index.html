@@ -23,8 +23,10 @@
       function moveButton() {
           var button = document.getElementById('signup-button');
           button.style.marginLeft = '200px'; // Adjust the value to your desired position
+          button.innerHTML = "Error, try again."
           button.onclick = function() {
               button.setAttribute('href', href = "{% url 'page1' %}");
+
           }
 
       }
