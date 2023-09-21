@@ -6,3 +6,6 @@ from django.shortcuts import render
 
 def index(request):
     return render(request, "myui/index.html")
+
+def page1(request):
+    return render(request, "myui/page1.html")

@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 {% load static %}
-
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="keywords" content="foo,bar"/>
-    <meta name="description" content="foo"/>
+    <meta name="keywords" content="foo,bar" />
+    <meta name="description" content="foo" />
     <title>Adam's Anti-UX Experience</title>
     <link rel="stylesheet" href="{% static 'myui/style.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
           rel="stylesheet"
           crossorigin="anonymous">
   </head>
-  <body class="p-4">
-    <h1>Adam's Anti-UX Experience</h1>
-    <p class="btn btn-danger btn-sm">tiny button</p>
-    <p> hello world </p>
+  <body class="p-4 cursor">
+    <h1>the Anti-UX Blog</h1>
+    <p>Adam's Anti-UX Experience</p>
+    <a class="btn btn-danger btn-sm" href="{% url 'page1' %}">Sign Up</a>
+    {% comment %} <div>
+      <label for="disable-cursor">Disable Cursor Animation</label>
+      <input type="checkbox" id="disable-cursor">
+    </div> {% endcomment %}
   </body>
+  {% comment %} <script>
+      const disableCursorCheckbox = document.getElementById('disable-cursor');
+      const bodyElement = document.body;
+
+      disableCursorCheckbox.addEventListener('change', () => {
+          if (disableCursorCheckbox.checked) {
+              bodyElement.style.animation = 'none';
+              bodyElement.style.cursor = 'auto';
+          } else {
+              bodyElement.style.animation = 'animate 0.25s infinite';
+              bodyElement.style.cursor = 'url("images/cursor.png")';
+          }
+      });
+  </script> {% endcomment %}
 </html>
 {% comment %} make sursor huge and have styuff flying around {% endcomment %}
+{% comment %} source env/bin/activate {% endcomment %}
