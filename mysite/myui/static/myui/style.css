@@ -1,25 +1,11 @@
 h1 {
     font-family: "Comic Sans MS", cursive, sans-serif;
-    color: #f4f4f4 !important;
+    color: red !important;
 }
 .btn:hover {
     cursor: not-allowed;
 }
-.cursor {
-    cursor: url('images/cursor.png'), not-allowed;
-    text-align: center;
-    animation: animate 0.25s infinite;
-}
 .mega-space {
     position: absolute;
     top: 50%;
-}
-
-@keyframes animate{
-    0%{ 
-      cursor: url("images/cursor.png"), not-allowed;
-    }
-    50%{
-      cursor: url("images/cursor2.png"), not-allowed;
-    }
 }

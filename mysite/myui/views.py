@@ -9,3 +9,7 @@ def index(request):
 
 def page1(request):
     return render(request, "myui/page1.html")
+def page2(request):
+    return render(request, "myui/page2.html")
+def page3(request):
+    return render(request, "myui/page3.html")

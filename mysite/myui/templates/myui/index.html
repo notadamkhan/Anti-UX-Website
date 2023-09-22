@@ -6,18 +6,24 @@
     <meta name="keywords" content="foo,bar" />
     <meta name="description" content="foo" />
     <title>Adam's Anti-UX Experience</title>
-    <link rel="stylesheet" href="{% static 'myui/style.css' %}">
+    <link rel="stylesheet" href="{% static 'myui/index.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
           rel="stylesheet"
           crossorigin="anonymous">
   </head>
-  <body class="p-4 cursor">
+  <body class="p-4 cursor mb-5">
+    <div align="right">
     <h1>the Anti-UX Blog</h1>
-    <p>To continue to the anti-UX blog, you must create an account.</p>
+    <p>Task: Create an account and a short blog post.</p>
     <a id="signup-button"
-       class="btn btn-danger btn-sm"
+       class="btn btn-danger signup btn-sm mb-5"
        href="#"
        onclick="moveButton()">Sign Up</a>
+    <a id="quit"
+       class="btn btn-primary btn-sm mb-5"
+       href="#"
+       onclick="">Exit</a>
+    </div>
   </body>
   <script>
       function moveButton() {
