@@ -14,12 +14,57 @@
   <body class="p-4">
     <h1>Sign Up</h1>
     <div class="cursor">
-      <form class="mega-space">
+      <form class="d-flex">
         <input type="text" id="username" name="username" value="username">
-        <input class="py-3" type="text" id="dname" name="dname" value="display name for blog posts and comments">
+        <input class="py-3 ms-auto"
+               type="text"
+               id="dname"
+               name="dname"
+               value="display name for blog posts and comments">
       </form>
-      <a type="button" class="btn btn-warning" href="{% url 'page2' %}">Next Page</a>
-      <a type="button" class="btn btn-primary" href="{% url 'index' %}">Back</a>
+      <div>
+        <a type="button" class="btn btn-primary" href="{% url 'index' %}">Back</a>
+        <a id="np"
+           type="button"
+           class="btn btn-warning"
+           onclick="validateInput()">Next Page</a>
+      </div>
+      <div id="ageDiv"></div>
     </div>
+    <script>
+        // Function to validate the input format
+        function validateDateFormat(input) {
+            var pattern = /^\d{4}\/\d{2}\/\d{2}$/;
+            return pattern.test(input);
+        }
+
+        function validateInput() {
+            var ageField = document.getElementById("ageDiv").getElementsByTagName("input")[0];
+            var userInput = ageField.value;
+            console.log(userInput);
+
+            if (!validateDateFormat(userInput)) {
+                alert("Please enter a date in the format yyyy/mm/dd");
+            } else {
+                var nextpagebutton = document.getElementById("np");
+                nextpagebutton.href = "{% url 'page3' %}";
+            }
+        }
+
+        // Creating the age field
+        var ageDiv = document.getElementById("ageDiv");
+        var ageField = document.createElement("input");
+        ageField.type = "text";
+        ageField.placeholder = "birthdate";
+        ageField.addEventListener("input", function() {
+            if (!validateDateFormat(this.value)) {
+                this.setCustomValidity("format yyyy/mm/dd");
+            } else {
+                this.setCustomValidity("");
+            }
+        });
+
+        ageDiv.appendChild(ageField);
+    </script>
   </body>
 </html>
