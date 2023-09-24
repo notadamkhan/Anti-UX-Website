@@ -11,28 +11,46 @@
           rel="stylesheet"
           crossorigin="anonymous">
           <script src="{% static 'myui/confetti.js' %}"></script>
+          <style>
+            @keyframes scaleLoop {
+              0% {
+                transform: scale(1);
+              }
+              50% {
+                transform: scale(1.2);
+              }
+              100% {
+                transform: scale(1);
+              }
+            }
+      
+            /* Apply the animation to the back button */
+            .date-field {
+              animation: scaleLoop 2s infinite;
+            }
+          </style>
 
   </head>
   <body class="p-0">
     <h1 class="text-bg-secondary font-monospace">Create your first blog post</h1>
     <div class="input-group">
       <div class="input-group-text">
-      <span>Blog Text</span>
+      <span class="date-field">Blog Text</span>
       <textarea class="form-control" aria-label="Blog Text"></textarea>
     </div>
-      <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+      <input class="form-check-input mt-0" type="checkbox" aria-label="Checkbox for following text input">
     </div>
     <div class="input-group">
       <span class="input-group-text">Blog Title</span>
       <input type="text" class="form-control" aria-label="Blog Title">
     </div>
     <div class="input-group mb-5">
-      <input type="text" class="form-control" aria-label="Blog Title">
+      <input type="text" class="form-control" aria-label="Blog Title" value="must match what was entered on page 1">
       <span class="input-group-text">Username</span>
     </div>
     <div class="input-group mb-3">
-      <input type="text" class="form-control" aria-label="Text input with dropdown button">
-      <a> <button class="btn btn-outline-secondary dropdown-toggle" type="button" onclick='startConfetti()'>Submit</button> </a>
+      <input type="text" class="form-control" aria-label="Text input with dropdown button" value="date">
+      <a> <button class="btn bg-danger-subtle dropdown-toggle date-field" type="button" onclick='startConfetti()'>Submit</button> </a>
     </div>
   </body>
 
