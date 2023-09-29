@@ -12,7 +12,7 @@
           crossorigin="anonymous">
   </head>
   <body class="p-4">
-    <h1 class="fst-italic">Sign Up</h1>
+    <h1 class="fst-italic text-decoration-line-through text-muted">Sign Up</h1>
     <div class="cursor">
       <form class="d-flex">
         <input type="text" id="username" name="username" value="username">
@@ -44,7 +44,7 @@
             console.log(userInput);
 
             if (!validateDateFormat(userInput)) {
-                alert("Please enter a date in the format yyyy/mm/dd");
+                alert("Please enter the date in the format yyyy/mm/dd");
             } else {
                 var nextpagebutton = document.getElementById("np");
                 nextpagebutton.href = "{% url 'page3' %}";

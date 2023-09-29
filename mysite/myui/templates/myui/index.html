@@ -13,19 +13,14 @@
   </head>
   <body class="p-4 cursor mb-5">
     <div align="right">
-    <h1>the Anti-UX Blog</h1>
-    <p>Task: Create an account and a short blog post.</p>
-    <a id="signup-button"
-       class="btn btn-danger signup btn-sm mb-5"
-       href="#"
-       onclick="moveButton()">Sign Up</a>
-    <a id="quit"
-       class="btn btn-primary btn-sm mb-5"
-       href="#"
-       onclick="">Exit</a>
+      <h1>the Anti-UX Blog</h1>
+      <p>Task: Create an account and a short blog post.</p>
+      <a id="signup-button" class="btn btn-danger signup btn-sm mb-5 text-black" href="{% url 'page1' %}">Sign Up</a>
+      <a id="quit" class="btn btn-primary btn-lg mb-5" onclick="">Exit</a>
     </div>
   </body>
-  <script>
+  {% comment %} <script>
+
       function moveButton() {
           var button = document.getElementById('signup-button');
           button.style.marginLeft = '200px'; // Adjust the value to your desired position
@@ -36,7 +31,6 @@
           }
 
       }
-  </script>
+  </script> {% endcomment %}
 </html>
-{% comment %} have stuff flying around / popping up {% endcomment %}
 {% comment %} source env/bin/activate {% endcomment %}
